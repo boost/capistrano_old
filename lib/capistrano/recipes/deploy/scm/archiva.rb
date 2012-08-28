@@ -46,7 +46,7 @@ module Capistrano
 
     	  def file_type
     	    files = configuration[:file_type] || 'war'
-    	    files = files.to_a
+    	    files = *files
     	    logger.info "Checking out #{files.join(', ')} files."
      	    files = files.map { |file| file = "*.#{file}" }
     	    files.join(',')
